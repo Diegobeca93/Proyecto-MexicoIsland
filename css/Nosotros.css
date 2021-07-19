@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/** GLOBALES **/
+/** btn, iconos media **/
+/** MIXINS **/
+/** FIN, GLOBALES **/
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/water-1330252_1920.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+/**INICIO, NAVEGACIÓN **/
+header {
+  width: 100%;
+  padding: 0 100px;
+}
+
+.navbar-brand {
+  margin-right: 27rem;
+}
+
+.nav-item {
+  margin: 10px;
+}
+
+.nav-item .nav-link,
+.nav-item .dropdown-item {
+  font-weight: 600;
+}
+
+.nav-item .nav-link:hover,
+.nav-item .dropdown-item:hover {
+  background-color: #318aac;
+  border-radius: 10px 50px;
+}
+
+h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.titulo span {
+  font-family: 'Caveat', cursive;
+  color: #fff;
+}
+
+/** FIN, NAVEGACIÓN **/
+/** Main **/
+.contenedor {
+  height: 100%;
+  margin: 20px 80px;
+}
+
+.contenedor h1 {
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  transition: ease .5s;
+  margin-bottom: 30px;
+}
+
+.contenedor .nosotros {
+  height: 80%;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  /** Imagen **/
+}
+
+.contenedor .nosotros .nosotros__contenido-img {
+  padding-left: 10px;
+  padding-right: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.contenedor .nosotros .nosotros__contenido-img .img {
+  width: 500px;
+  height: 600px;
+  border-radius: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor .nosotros .nosotros__contenido {
+  width: 100%;
+  padding: 0 10px;
+  height: auto;
+}
+
+.contenedor .nosotros .nosotros__contenido .nosotros__contenido-logo {
+  text-align: center;
+  color: #000;
+}
+
+.contenedor .nosotros .nosotros__contenido .nosotros__contenido-logo span {
+  color: #318aac;
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.contenedor .nosotros .nosotros__contenido .nosotros__contenido-mision,
+.contenedor .nosotros .nosotros__contenido .nosotros__contenido-vision {
+  margin-left: 170px;
+  text-align: center;
+  color: #000;
+  border-bottom: solid #318aac 2px;
+  width: 300px;
+}
+
+.contenedor .nosotros .nosotros__contenido .nosotros__contenido-attcliente {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.contenedor .nosotros .nosotros__contenido .nosotros__contenido-texto1,
+.contenedor .nosotros .nosotros__contenido .nosotros__contenido-texto2,
+.contenedor .nosotros .nosotros__contenido .nosotros__contenido-texto3 {
+  line-height: 25px;
+  margin: 0;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 10px;
+}
+
+.contenedor .nosotros .texto-1 {
+  margin-bottom: 20px;
+}
+
+.contenedor .nosotros .texto-2 {
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=Nosotros.css.map */
