@@ -165,7 +165,7 @@ h1 span {
 
 .contenedor .card .card__contenido .card__contenido-btn:hover {
   color: #fff !important;
-  box-shadow: 0 4px 16px #011b42;
+  box-shadow: 0 4px 16px #318aac;
   transition: all 0.2s ease;
 }
 
@@ -235,7 +235,7 @@ h1 span {
   }
   .contenedor .card .card__contenido {
     position: absolute;
-    bottom: -90%;
+    bottom: -120%;
     left: 0;
     margin: 0;
     padding: 5px 10px 5px 10px;
