@@ -2,10 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Hanalei&display=swap');
 
-/** VARIABLES **/
+/** INICIO, Globales **/
 $colorprimario: #000;
 $colorsecundario: #fff;
-$colortreciario: #318aac;
+$colortreciario: rgb(1, 27, 66);
+$color-linknav: #318aac;
+
 
 $fontsize-logo: 30px;
 $fontsize-titulo: 40px;
@@ -19,7 +21,7 @@ $fontsize-extras: 15px; /** btn, iconos media **/
 }
 
 @mixin input-text {
-    width: 80%;
+    width: 100%;
     border: none;
     padding: 10px;
     border-radius: 2px;
@@ -61,34 +63,40 @@ header {
     width: 100%;
     padding: 0 100px;
 }
-.navbar-brand {
-    margin-right: 27rem;
-    
-}
-.nav-item {
-    margin: 10px;
-    
-    & .nav-link,
-    & .dropdown-item {
-        font-weight: 600;
+    .navbar-brand {
+        margin-right: 27rem;
         
+    }
+    
+    
+    .nav-item {
+        margin: 10px;
+        font-weight: 600; 
         &:hover {
-            background-color: $colortreciario;
+            background-color: $color-linknav;
             border-radius: 10px 50px;
         }
+        & .dropdown-item {
+            font-weight: 600; 
+          &:hover {
+            background-color: $color-linknav;
+            border-radius: 10px 50px;
+          }
+        }
+  
+      }
+
+
+
+    h1 {
+        font-size: $fontsize-logo;
+        text-transform: uppercase;
+        font-weight: 800;
     }
-}
-
-
-h1 {
-    font-size: $fontsize-logo;
-    text-transform: uppercase;
-    font-weight: 800;
-}
-.titulo span {
-    font-family: 'Caveat', cursive;  
-    color: $colorsecundario;
-}
+    .titulo span {
+        font-family: 'Caveat', cursive;  
+        color: $colorsecundario;
+    }
 /* FIN, NAVEGACION **/
 
 /** INICIO, TARJETA DE CONTACTO **/
@@ -194,3 +202,157 @@ h1 {
         }
     } 
 }       
+
+
+/** MQ **/
+@media only screen and (max-width : 800px) {
+    header{
+        @include reset-mp;
+  
+        .navbar-brand {
+          margin-right: 0;
+          margin-left: 2rem;
+          
+      }
+    }
+    .navbar-toggler {
+      background: rgb(2,0,36);
+      background: rgb(14,64,98);
+      background: radial-gradient(circle, rgba(14,64,98,1) 0%, rgba(49,138,172,1) 100%);
+      box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.178);
+      height: 34px;
+      width: 44px;
+      padding: 0;
+      font-size: 16px;
+      border-radius: 20px 50px;
+  
+      & .fa {
+        color: $colorsecundario;
+      }
+    }
+    .navbar-light .navbar-toggler {
+      color: $color-linknav;
+      border: none;
+    }
+    .nav-item,
+    .dropdown-menu li {
+      text-align: center;  
+    }
+
+
+    .form-contact {
+
+        & h2 {
+            font-size: 30px;
+            margin: 1rem;
+        }
+
+        & .formulario {
+
+            flex-direction: column-reverse;
+            
+            & .contenedor {
+                max-height: inherit;
+                margin: 0 10px;
+
+                & .contenedor__campo {
+                    margin-left: 0;
+                }
+                
+                & .contenedor__campo-mensaje {
+                    margin-left: 15px
+                }
+            }
+
+            & .imagen__form {
+                width: 100%;
+                background: transparent;
+         
+                   & .imagen__form-img {
+                    max-width: 500px;
+                    height: auto;
+                    position: initial;
+                    width: 100%;
+                    margin: 0;
+                    border-radius: 30px 30px 0px 0;
+           
+                }
+            }
+        }
+    }
+    
+
+}
+
+
+
+
+/** MQ **/
+
+@media (max-width : 450px) {
+
+    header{
+        @include reset-mp; 
+        
+        .navbar-brand {
+          margin-right: 0;
+        }
+        h1 {
+          font-size: 25px;
+        }
+    }
+    .navbar-brand {
+        margin-right: 1rem;
+        margin-left: 2rem;
+    }
+    .navbar-toggler {
+      background: rgb(14,64,98);
+      background: radial-gradient(circle, rgba(14,64,98,1) 0%, rgba(49,138,172,1) 100%);
+      box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.178);
+      height: 34px;
+      width: 44px;
+      padding: 0;
+      font-size: 16px;
+      border-radius: 20px 50px;
+  
+      & .fa {
+        color: $colorsecundario;
+      }
+    }
+    .navbar-light .navbar-toggler {
+      color: $colortreciario;
+      border: none;
+    }
+    .nav-item,
+    .dropdown-menu li {
+      text-align: center;  
+    }
+    /** FIN, nav **/ 
+
+
+    .form-contact {
+        
+        & .formulario {
+            flex-direction: column-reverse;
+            margin: auto;
+
+            & .contenedor {
+                max-height: inherit;
+                
+                & .contenedor__campo {
+                    margin-left: 0;
+                }
+                
+                & .contenedor__campo-mensaje {
+                    margin-left: 15px
+                }
+            }
+        }
+
+        
+    }
+
+    
+
+}
+   

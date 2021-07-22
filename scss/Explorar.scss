@@ -56,15 +56,17 @@ header {
 }
 .nav-item {
     margin: 10px;
-    
-    & .nav-link,
+    font-weight: 600; 
+    &:hover {
+        background-color: $color-linknav;
+        border-radius: 10px 50px;
+    }
     & .dropdown-item {
-        font-weight: 600;
-        
-        &:hover {
-            background-color: $color-linknav;
-            border-radius: 10px 50px;
-        }
+        font-weight: 600; 
+      &:hover {
+        background-color: $color-linknav;
+        border-radius: 10px 50px;
+      }
     }
 }
 

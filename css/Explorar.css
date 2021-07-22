@@ -30,14 +30,18 @@ header {
 
 .nav-item {
   margin: 10px;
+  font-weight: 600;
 }
 
-.nav-item .nav-link,
+.nav-item:hover {
+  background-color: #318aac;
+  border-radius: 10px 50px;
+}
+
 .nav-item .dropdown-item {
   font-weight: 600;
 }
 
-.nav-item .nav-link:hover,
 .nav-item .dropdown-item:hover {
   background-color: #318aac;
   border-radius: 10px 50px;

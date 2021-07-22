@@ -1,7 +1,12 @@
-/** GLOBALES **/
+/******* FONTS ******/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Hanalei&display=swap');
+
+/** INICIO, Globales **/
 $colorprimario: #000;
 $colorsecundario: #fff;
-$colortreciario: #318aac;
+$colortreciario: rgb(1, 27, 66);
+$color-linknav: #318aac;
 
 $fontsize-logo: 30px;
 $fontsize-titulo: 45px;
@@ -27,143 +32,148 @@ body {
     background-position:center;
     background-size: cover;
 }
-
-/**INICIO, NAVEGACIÓN **/
+/** INICIO, HEADER-NAV **/
 header {
     
     width: 100%;
     padding: 0 100px;
-}
-.navbar-brand {
-    margin-right: 27rem;
-    
-}
-.nav-item {
-    margin: 10px;
-    
-    & .nav-link,
-    & .dropdown-item {
-        font-weight: 600;
-        
+
+    .navbar-brand {
+        margin-right: 27rem;
+    }
+    .nav-item {
+      margin: 10px;
+      font-weight: 600; 
+      &:hover {
+          background-color: $color-linknav;
+          border-radius: 10px 50px;
+      }
+      & .dropdown-item {
+          font-weight: 600; 
         &:hover {
-            background-color: $colortreciario;
-            border-radius: 10px 50px;
+          background-color: $color-linknav;
+          border-radius: 10px 50px;
         }
+      }
+
+    }
+  
+    h1 {
+        font-size: $fontsize-logo;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+    .titulo span {
+        font-family: 'Caveat', cursive;  
+        color: $colorsecundario;
     }
 }
+/** FIN, HEADER-NAV **/
 
-h1 {
-    font-size: $fontsize-logo;
-    text-transform: uppercase;
-}
-
-.titulo span {
-    font-family: 'Caveat', cursive;  
-    color: $colorsecundario;
-}
-/** FIN, NAVEGACIÓN **/
 
 /** Main **/
-.contenedor {
+.card {
+    width: 100%;
+    margin: 5% auto;
+}
+
+.img-fluid {
     height: 100%;
-    margin: 20px 80px;
+}
 
-    & h1{
+.card-title {
+    text-align: center;
+    border-bottom: solid 1.5px $color-linknav;
+    margin: 0 20%;
+    color: $colorprimario;
+}
+.card-text {
+    & .text-muted {
         text-align: center;
-        font-family: 'Caveat', cursive;  
-        transition: ease .5s; 
-        margin-bottom: 30px;
+        width: 100%;
+        display: block;
     }
-
-    & .nosotros {
-        height: 80%;
-        display: flex;
-        flex-direction:row-reverse;
-        padding: 10px;
-        background: rgba( 255, 255, 255, 0.30 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-        backdrop-filter: blur( 20.0px );
-        -webkit-backdrop-filter: blur( 20.0px );
-        border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-        
+}
 
 
-        
-        /** Imagen **/
 
-        & .nosotros__contenido-img {
-            padding-left: 10px;
-            padding-right: 50px; 
-            margin-top: auto;
-            margin-bottom: auto;
 
-            & .img {
-                width: 500px;
-                height: 600px;
-                border-radius: 20px;
-                margin: 0;
-                padding: 0;
-    
-            }
-
-        }
-        
-
-        & .nosotros__contenido {
-            width: 100%;
-            padding: 0 10px;
-            height: auto;  
-            & .nosotros__contenido-logo {
-                text-align: center;
-                color: $colorprimario;
-            }
-            & .nosotros__contenido-logo span {
-                color: $colortreciario;
-                font-family: 'Caveat', cursive;
-                font-size: 30px;
-                text-transform: uppercase;
-            }
-            & .nosotros__contenido-mision,
-            & .nosotros__contenido-vision {
-                margin-left: 170px;
-                text-align: center;
-                color: $colorprimario;
-                border-bottom: solid $colortreciario 2px;
-                width: 300px;
-            }
-            & .nosotros__contenido-attcliente {
-                font-family:Verdana, Geneva, Tahoma, sans-serif;
-                text-align: center;
-                font-size: 12px;
-                margin-top: 10px;
-                margin-bottom: 0;
-            } 
-
-            & .nosotros__contenido-texto1,
-            & .nosotros__contenido-texto2,
-            & .nosotros__contenido-texto3 {
-                line-height: 25px;
-                margin: 0;
-                color: $colorprimario;
-                font-family:Arial, Helvetica, sans-serif;
-                padding-bottom: 10px;
-            }
-             
+/** MQ **/
+@media only screen and (max-width : 800px) {
+    header{
+        @include reset-mp;
+  
+        .navbar-brand {
+          margin-right: 0;
+          margin-left: 2rem;
           
+      }
+    }
+    .navbar-toggler {
+      background: rgb(2,0,36);
+      background: rgb(14,64,98);
+      background: radial-gradient(circle, rgba(14,64,98,1) 0%, rgba(49,138,172,1) 100%);
+      box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.178);
+      height: 34px;
+      width: 44px;
+      padding: 0;
+      font-size: 16px;
+      border-radius: 20px 50px;
+  
+      & .fa {
+        color: $colorsecundario;
+      }
+    }
+    .navbar-light .navbar-toggler {
+      color: $color-linknav;
+      border: none;
+    }
+    .nav-item,
+    .dropdown-menu li {
+      text-align: center;  
+    }
+}
+
+/** MQ **/
+
+@media (max-width : 450px) {
+
+    header{
+        @include reset-mp; 
+        
+        .navbar-brand {
+          margin-right: 0;
+        }
+        h1 {
+          font-size: 25px;
         }
     }
-
+    .navbar-brand {
+        margin-right: 1rem;
+        margin-left: 2rem;
+    }
+    .navbar-toggler {
+      background: rgb(14,64,98);
+      background: radial-gradient(circle, rgba(14,64,98,1) 0%, rgba(49,138,172,1) 100%);
+      box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.178);
+      height: 34px;
+      width: 44px;
+      padding: 0;
+      font-size: 16px;
+      border-radius: 20px 50px;
+  
+      & .fa {
+        color: $colorsecundario;
+      }
+    }
+    .navbar-light .navbar-toggler {
+      color: $colortreciario;
+      border: none;
+    }
+    .nav-item,
+    .dropdown-menu li {
+      text-align: center;  
+    }
+    
 }
-
-
-
-
-
-.contenedor .nosotros .texto-1 {
-    margin-bottom: 20px;
-}
-.contenedor .nosotros .texto-2 {
-    margin-bottom: 20px;
-}
-
+   /** FIN, nav **/ 

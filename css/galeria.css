@@ -22,6 +22,7 @@ header {
 h1 {
     font-size: 30px;
     text-transform: uppercase;
+    font-weight: 800;
 }
 
 .titulo span {
@@ -30,61 +31,28 @@ h1 {
 }
 
 /** NAVEGACIÓN **/
-.navegacion-principal ul {
-    text-decoration: none;
-    list-style: none;
-}
-.navegacion-principal li {
-    display: inline-block;
-    position: relative;
-}
-.navegacion-principal a {
-    margin-left: 2rem;
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s ease;
-    list-style: none;
-}
-.navegacion-principal a:hover {
-    color: black;
-    transition: all .5s;
-}
-
-.submenu {
-    position: absolute;
-    display: none;
-}
-.submenu li {
-    display: block;
-}
-.submenu li a {
-    display:block;
-    margin: 0;
+header {
     width: 100%;
-    padding: 2px 18px;
-    background-color: rgba(0, 206, 209, 0.562);
+    padding: 0 100px;
 }
-.navegacion-principal ul li:hover .submenu {
-    display: block;
+.navbar-brand {
+    margin-right: 27rem;
 }
-
-
-.navegacion-principal a {
-    margin-left: 2rem;
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s ease;
-    list-style: none;
+.nav-item {
+  margin: 10px;
+  font-weight: 600;
 }
-.navegacion-principal a:hover {
-    color: black;
-    transition: all .5s;
+.nav-item:hover {
+      background-color: #318aac;
+      border-radius: 10px 50px;
 }
-
-
-
+.dropdown-item {
+      font-weight: 600; 
+}
+.dropdown-item:hover {
+      background-color: #318aac;
+      border-radius: 10px 50px;
+}
 
 /** GALERIA **/
 .galeria {
@@ -175,4 +143,58 @@ h1 {
 .next:hover {
     color: lawngreen;
     background-color:black;
+}
+
+
+/** MQ **/
+@media only screen and (max-width : 900px) {
+    
+    header {
+        margin: 0;
+        padding: 0;
+    }
+    .navbar-brand {
+         margin-right: 0;
+          margin-left: 2rem;
+          
+      }
+    .navbar-toggler {
+      background: rgb(2,0,36);
+      background: rgb(14,64,98);
+      background: radial-gradient(circle, rgba(14,64,98,1) 0%, rgba(49,138,172,1) 100%);
+      box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.178);
+      height: 34px;
+      width: 44px;
+      padding: 0;
+      font-size: 16px;
+      border-radius: 20px 50px;
+    }
+    .fa {
+        color: #fff;
+    }
+    
+    .navbar-light .navbar-toggler {
+      color: #318aac;
+      border: none;
+    }
+    .nav-item,
+    .dropdown-menu li {
+      text-align: center;  
+    }
+}
+
+@media (max-width : 450px) {
+
+    header {
+        margin: 0;
+        padding: 0;
+    }
+    .navbar-brand {
+        margin-right: 0;
+    }
+    h1 {
+        font-size: 25px;
+    }
+
+
 }
