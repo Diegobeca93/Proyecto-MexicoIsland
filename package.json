@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "node-sass --include-path scss scss/contacto.scss css/contacto.css",
+    "build-css": "node-sass --include-path scss scss/Explorar.scss css/Explorar.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "author": "",
@@ -13,7 +13,6 @@
     "node-sass": "^6.0.1",
     "nodemon": "^2.0.9"
   },
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Diegobeca93/Proyecto-MexicoIsland.git"
