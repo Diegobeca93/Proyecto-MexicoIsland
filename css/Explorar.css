@@ -113,7 +113,7 @@ h1 {
         align-items: center; }
       .contenedor .card .card__contenido .card__contenido-Iconos i {
         font-size: 15px;
-        margin: 5px; }
+        margin: 2px; }
       .contenedor .card .card__contenido .card__contenido-btn {
         /** $fontsize-extras, $colortreciario, $colortreciario **/
         font-size: 15px;
@@ -186,7 +186,7 @@ h1 {
       height: auto; }
     .contenedor .card .card__contenido {
       position: absolute;
-      bottom: -75%;
+      bottom: -100%;
       padding: 10px 10px 10px 10px; } }
 
 @media only screen and (max-width: 450px) {
@@ -239,7 +239,7 @@ h1 {
       max-width: 333px; }
     .contenedor .card .card__contenido {
       position: absolute;
-      bottom: -200px;
+      bottom: -150%;
       left: 0;
       margin: 0;
       padding: 5px 10px 5px 10px; }
