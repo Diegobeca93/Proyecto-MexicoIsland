@@ -177,14 +177,14 @@ header {
             transform: perspective(600px) rotateY(180deg);
             backface-visibility: hidden;
             overflow: auto;
-            background: #2BC0E4;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to bottom, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */    background: linear-gradient(to bottom, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: rgb(243,232,215);
+            background: linear-gradient(0deg, rgba(243,232,215,1) 15%, rgba(243,232,215,1) 74%);  
           }
           
           figure .trasera h2 {
             color: $colorprimario;
             font-weight: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
             font-family: 'Poppins', sans-serif;
             font-size: 30px;
             display: flex;
@@ -195,7 +195,7 @@ header {
             height: 2px;
             background: #000;
             border: none;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             opacity: .5;
           }
           
@@ -206,6 +206,11 @@ header {
             color: $colorprimario;
           }
 
+          & .fa-star,
+          & .fa-star-half-o {
+            font-size: 1rem;
+            color: #ffbf00; 
+          }
         
     }
     
@@ -277,36 +282,35 @@ header {
   .block {
       flex-direction: column;
       padding: 0px 40px;
-  }
-  & .principal {
-      width: 100%;
-
-      & h2{
-        font-size: 60px;
-        margin-bottom: 0;
-        margin-top: 40px;
-        text-align: center;
-    }
-     & h3 {
-        font-size: 30px;
-        text-align: center;
-        padding-left: 20%;
-        top: 0;
-    }
-      & p {
+  
+    & .principal {
         width: 100%;
-        margin-bottom: 2rem;
-        line-height: 25px;
-    }
-      & .boton-1 {
-        padding: 10px 20px;
-        font-size: 15px;
-        display:block;
-        margin: 0 50px;
-        text-align: center;
+
+        & h2{
+          font-size: 60px;
+          margin-bottom: 0;
+          margin-top: 40px;
+          text-align: center;
+      }
+      & h3 {
+          font-size: 30px;
+          text-align: center;
+          padding-left: 20%;
+          top: 0;
+      }
+        & p {
+          width: 100%;
+          margin-bottom: 2rem;
+      }
+        & .boton-1 {
+          padding: 10px 20px;
+          font-size: 15px;
+          display:block;
+          margin: 0 50px;
+          text-align: center;
+      }
     }
   }
-
 
   /** CARD 3D **/
   .contenedor {
@@ -390,7 +394,7 @@ header {
         top: 0;
     }
     & p {
-        margin-top: 15px;
+        margin-top: 10px;
         width: 100%;
         font-weight: 300;
         margin-bottom: 2rem;
@@ -415,13 +419,19 @@ header {
       height: 200px;
 
       & .trasera h2 {
-        font-size: 20px;
-        margin-bottom: 20px;
+        font-size: 18px;
+        margin-bottom: 0px;
       }
-      
-      & .trasera p {
-        line-height: 20px;
 
+      & .trasera p {
+        line-height: 18px;
+        font-size: 12px;
+        margin-bottom: 0;
+      }
+      & .fa-star,
+      & .fa-star-half-o {
+        font-size: 1rem;
+        color: #ffbf00;
       }
     }
     /****** iconos *******/
