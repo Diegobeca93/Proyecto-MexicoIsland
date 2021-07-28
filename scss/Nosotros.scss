@@ -11,7 +11,7 @@ $color-linknav: #318aac;
 $fontsize-logo: 30px;
 $fontsize-titulo: 45px;
 $fontsize-parrafos: 14px;
-$fontsize-extras: 15px; /** btn, iconos media **/
+$fontsize-extras: 18px; /** btn, iconos media **/
 
 /** MIXINS **/
 @mixin reset-mp {
@@ -31,6 +31,8 @@ body {
     background-image: url('../img/water-1330252_1920.jpg');
     background-position:center;
     background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; 
 }
 /** INICIO, HEADER-NAV **/
 header {
@@ -71,28 +73,86 @@ header {
 /** FIN, HEADER-NAV **/
 
 
-/** Main **/
-.card {
-    width: 100%;
-    margin: 5% auto;
-}
+/** slider imagenes **/
+section {
+  position: absolute;
+  width: 90%;
+  height: 80vh;
+  display: flex;
+  border: solid 1px $colorprimario;
+  margin: 20px 50px;
+  -webkit-box-shadow: 7px 7px 19px 0px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow:    7px 7px 19px 0px rgba(0, 0, 0, 0.42);
+  box-shadow:         7px 7px 19px 0px rgba(0, 0, 0, 0.42);
 
-.img-fluid {
-    height: 100%;
-}
+    & .slide {
+        position: relative;
+        height: 100%;
+        flex: 1;
+        border-right: 1px solid $colorprimario;
+        overflow: hidden;
+        transition: .5s ease-in-out;
+      
+        &:last-child {
+          border-right: none;
+        }
+        &:hover {
+          flex-grow: 5;
+        }
 
-.card-title {
-    text-align: center;
-    border-bottom: solid 1.5px $color-linknav;
-    margin: 0 20%;
-    color: $colorprimario;
-}
-.card-text {
-    & .text-muted {
-        text-align: center;
-        width: 100%;
-        display: block;
-    }
+        &:nth-child(1){
+          background: url('../img/slider1.jpg');
+          background-position: center center;
+          background-size: cover;
+        }
+        &:nth-child(2){
+          background: url('../img/slider2.jpg');
+          background-position: center center;
+          background-size: cover;
+        }
+        &:nth-child(3){
+          background: url('../img/slider3.jpg');
+          background-position: center center;
+          background-size: cover;
+        }
+        &:nth-child(4){
+          background: url('../img/slider4.jpg');
+          background-position: center center;
+          background-size: cover;
+        }
+
+
+        & .contenedor {
+          position: absolute;
+          bottom: 0;
+          margin: 40px;
+          padding: 30px;
+          background: $color-linknav;
+          border-radius: 10px;
+          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.616);
+          visibility: hidden;
+          opacity: 0;
+          transition: 500ms;
+          transform: translateY(100px);
+
+          & h2 {
+            font-size: $fontsize-extras;
+            color: $colorsecundario;
+            text-transform: uppercase;
+          }
+          & p {
+            font-size: $fontsize-parrafos;
+            color: $colorsecundario;
+          }
+        }
+        &:hover .contenedor {
+          visibility: visible;
+          opacity: 1;
+          transition: .5s;
+          transition-delay: 500ms; 
+          transform: translateY(0);
+        }
+    }  
 }
 
 
@@ -100,38 +160,45 @@ header {
 
 /** MQ **/
 @media only screen and (max-width : 800px) {
-    header{
-        @include reset-mp;
-  
-        .navbar-brand {
-          margin-right: 0;
-          margin-left: 2rem;
-          
+      header{
+          @include reset-mp;
+    
+          .navbar-brand {
+            margin-right: 0;
+            margin-left: 2rem;
+            
+        }
       }
-    }
-    .navbar-toggler {
-      background: rgb(2,0,36);
-      background: rgb(14,64,98);
-      background: radial-gradient(circle, rgba(14,64,98,1) 0%, rgba(49,138,172,1) 100%);
-      box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.178);
-      height: 34px;
-      width: 44px;
-      padding: 0;
-      font-size: 16px;
-      border-radius: 20px 50px;
-  
-      & .fa {
-        color: $colorsecundario;
+      .navbar-toggler {
+        background: rgb(2,0,36);
+        background: rgb(14,64,98);
+        background: radial-gradient(circle, rgba(14,64,98,1) 0%, rgba(49,138,172,1) 100%);
+        box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.178);
+        height: 34px;
+        width: 44px;
+        padding: 0;
+        font-size: 16px;
+        border-radius: 20px 50px;
+    
+        & .fa {
+          color: $colorsecundario;
+        }
       }
-    }
-    .navbar-light .navbar-toggler {
-      color: $color-linknav;
-      border: none;
-    }
-    .nav-item,
-    .dropdown-menu li {
-      text-align: center;  
-    }
+      .navbar-light .navbar-toggler {
+        color: $color-linknav;
+        border: none;
+      }
+      .nav-item,
+      .dropdown-menu li {
+        text-align: center;  
+      }
+
+      /** SLIDE **/
+      section {
+        flex-direction: column;
+        margin: 20px 5%;
+      }
+      /** FIN, SLIDE **/
 }
 
 /** MQ **/
@@ -174,6 +241,23 @@ header {
     .dropdown-menu li {
       text-align: center;  
     }
-    
-}
-   /** FIN, nav **/ 
+    /** FIN, nav **/ 
+
+    /** slide **/
+    section {
+      flex-direction: column;
+      margin: 20px 5%;
+
+      & .slide{
+          & .contenedor h2 {
+            font-size: 16px;
+          }
+          & .contenedor p {
+            font-size: 12px;
+          }
+      }
+    }
+    /** FIN, slider **/
+
+  }
+  
