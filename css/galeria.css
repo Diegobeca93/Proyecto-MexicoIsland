@@ -181,6 +181,15 @@ header {
     .dropdown-menu li {
       text-align: center;  
     }
+    /** fin, nav **/
+
+    .light-box img {
+        width: 80%;
+    }
+    .close {
+        top: 20%;
+        right: 5%;
+    }
 }
 
 @media (max-width : 450px) {
@@ -196,5 +205,13 @@ header {
         font-size: 25px;
     }
 
+    .light-box img {
+        width: 75%;
+    }
+
+    .close {
+        top: 20%;
+        right: 5%;
+    }
 
 }
